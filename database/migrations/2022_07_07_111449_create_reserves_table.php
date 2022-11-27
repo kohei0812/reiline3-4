@@ -22,8 +22,14 @@ return new class extends Migration
             $table->string('driver');
             $table->string('memo');
             $table->unsignedBigInteger('user_id');
+            $table->integer('boat_num');
+            $table->integer('status');
+            $table->unsignedBigInteger('reserve_list_id');
+            $table->unsignedBigInteger('waiting_id');
             $table->timestamps();
             $table->foreign('user_id')->references('id')->on('users');
+            $table->foreign('reserve_list_id')->references('id')->on('reserve_lists');
+            $table->foreign('waiting_id')->references('id')->on('waitings');
         });
     }
 

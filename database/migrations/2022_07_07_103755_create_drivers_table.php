@@ -17,7 +17,9 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->string('mail');
-
+            $table->integer('notice');
+            $table->integer('enable');
+            $table->integer('plan');
             $table->timestamps();
         });
     }
