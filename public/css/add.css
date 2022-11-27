@@ -1,0 +1,238 @@
+.content {
+  overflow: hidden;
+}
+
+.none {
+  display: none;
+}
+
+.fc-daygrid-day {
+  cursor: pointer;
+}
+
+.fc-daygrid-day.not-ava {
+  pointer-events: none;
+}
+
+.fc-dayGridMonth-button, .fc-timeGridDay-button, .fc-timeGridWeek-button {
+  display: none;
+}
+
+.logo_wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.logo_wrapper .brand-link .brand-image {
+  max-height: none;
+}
+
+.registers {
+  overflow: hidden;
+  position: relative;
+}
+
+.registers .register-wrapper {
+  width: 200%;
+}
+
+.registers .register-wrapper.animate {
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+}
+
+.registers .register-wrapper .register1, .registers .register-wrapper .register2 {
+  width: 100%;
+  padding: 20px;
+}
+
+.card {
+  margin-bottom: 0;
+}
+
+.reserve-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: none;
+  z-index: -1;
+  opacity: 0;
+  -webkit-transition: all .6s ease;
+  transition: all .6s ease;
+}
+
+.reserve-modal.active {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  z-index: 1000;
+  opacity: 1;
+}
+
+.reserve-modal #register {
+  width: 70%;
+  height: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+
+.reserve-modal #register a {
+  width: 200px;
+  margin: 0 auto;
+}
+
+.reserve-modal .reserve-container {
+  margin: auto;
+}
+
+.reserve-modal .modal-close, .reserve-modal .ship-modal-close {
+  position: absolute;
+  top: 3%;
+  right: 3%;
+  background-color: white;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+
+.reserve-modal .reserves .reserve-wrapper {
+  position: relative;
+  height: 800px;
+}
+
+.reserve-modal .reserves .reserve-wrapper .reserve1, .reserve-modal .reserves .reserve-wrapper .reserve2, .reserve-modal .reserves .reserve-wrapper .reserve-confirm, .reserve-modal .reserves .reserve-wrapper .addship, .reserve-modal .reserves .reserve-wrapper .editShip {
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  display: none;
+}
+
+.reserve-modal .reserves .reserve-wrapper .reserve1.active, .reserve-modal .reserves .reserve-wrapper .reserve2.active, .reserve-modal .reserves .reserve-wrapper .reserve-confirm.active, .reserve-modal .reserves .reserve-wrapper .addship.active, .reserve-modal .reserves .reserve-wrapper .editShip.active {
+  z-index: 10;
+  display: block;
+}
+
+.fc-daygrid-day-number {
+  cursor: pointer;
+}
+
+.driver-list {
+  list-style: none;
+}
+
+.driver-list__item.not-ava {
+  display: none;
+}
+
+.driver-list__item.disabled span {
+  color: #707070;
+  text-decoration: line-through;
+}
+
+.loading-wrapper {
+  position: absolute;
+  width: 100%;
+  display: none;
+  background-color: white;
+  z-index: 10000;
+}
+
+.loading-wrapper.active {
+  display: block;
+}
+
+.loading-wrapper .loading-inner img {
+  display: block;
+  margin: 10px auto;
+  width: 100%;
+}
+
+.loading-wrapper .loading-inner p {
+  display: block;
+  margin: 10px auto;
+  text-align: center;
+  position: relative;
+  z-index: 100001;
+}
+
+.loading-wrapper .loading-inner .loader {
+  color: black;
+  margin: 25vh auto;
+  font-size: 10px;
+  margin: 50px auto;
+  text-indent: -9999em;
+  width: 11em;
+  height: 11em;
+  border-radius: 50%;
+  background: #212121;
+  background: -webkit-gradient(linear, left top, right top, color-stop(10%, #212121), color-stop(42%, rgba(33, 33, 33, 0)));
+  background: linear-gradient(to right, #212121 10%, rgba(33, 33, 33, 0) 42%);
+  position: relative;
+  -webkit-animation: load3 1.4s infinite linear;
+  animation: load3 1.4s infinite linear;
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+}
+
+.loading-wrapper .loading-inner .loader:before {
+  width: 50%;
+  height: 50%;
+  background: #212121;
+  border-radius: 100% 0 0 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  content: '';
+}
+
+.loading-wrapper .loading-inner .loader:after {
+  background: white;
+  width: 75%;
+  height: 75%;
+  border-radius: 50%;
+  content: '';
+  margin: auto;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
+
+@-webkit-keyframes load3 {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes load3 {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+/*# sourceMappingURL=add.css.map */
