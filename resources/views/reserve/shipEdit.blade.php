@@ -1,7 +1,7 @@
 @extends('layouts.app')
 @section('title','たきや漁予約システム |Edit ReserveList')
 @section('content')
-<h1 class="text-center">Edit Ship</h1>
+<h1 class="text-center">{{ __('船数編集') }}</h1>
 @php
 $user = $reserveList->user_id;
 @endphp
@@ -30,12 +30,12 @@ $user = $reserveList->user_id;
                     <input id="date" type="hidden" class="form-control @error('date') is-invalid @enderror" name="date" value="{{$reserve->date}}" required autocomplete="date" autofocus>
                     <input id="plan" type="hidden" class="form-control @error('plan') is-invalid @enderror" name="plan" value="{{ $reserve->plan}}" required autocomplete="plan" autofocus>
                     <input id="user_id" type="hidden" class="form-control @error('user_id') is-invalid @enderror" name="user_id" value="{{ $reserve->user_id}}" required autocomplete="user_id" autofocus>
-                    <button type="submit" class="btn btn-danger px5">Delete</button>
+                    <button type="submit" class="btn btn-danger px5">  {{ __('船削除') }}</button>
                 </form>
             </div>
         </div>
         <div class="pattern_wrapper row mb-3">
-            <label class="col-md-4 col-form-label text-md-end">{{ __('pattern') }}</label>
+            <label class="col-md-4 col-form-label text-md-end">{{ __('パターン') }}</label>
             <div class="col-md-4">
                 <select type="text" class="pattern form-control @error('pattern') is-invalid @enderror" name="pattern" value="{{$reserve->pattern}}" required autocomplete="pattern" autofocus>
                     <option value="" selected hidden>{{$reserve->pattern}}</option>
@@ -61,8 +61,8 @@ $user = $reserveList->user_id;
     </div>
     @endforeach
     <div class="my-3 text-center d-flex">
-        <a href="{{ route('user.reserve',$user) }}" class="btn btn-warning">Back</a>
-        <span id="ship_add" class="btn btn-success mx-3">{{ __('Add ship') }}</span>
+        <a href="{{ route('user.reserve',$user) }}" class="btn btn-warning">{{ __('戻る') }}</a>
+        <span id="ship_add" class="btn btn-success mx-3">{{ __('船追加') }}</span>
     </div>
 </div>
 <div class="reserve-modal">
@@ -81,7 +81,7 @@ $user = $reserveList->user_id;
 
                                         <div id ="def_boat-num"class="d-none">{{ $reserveList->boat_num }}</div>
                                         <div class="row mb-3">
-                                            <label for="boat_num" class="col-md-4 col-form-label text-md-end">{{ __('boat_num') }}</label>
+                                            <label for="boat_num" class="col-md-4 col-form-label text-md-end">{{ __('船数') }}</label>
 
                                             <div class="col-md-6">
                                                 <input id="boat_num" type="number" class="form-control @error('date') is-invalid @enderror" name="boat_num" value="{{ $reserveList->boat_num }}" required autocomplete="boat_num" autofocus>
@@ -98,13 +98,13 @@ $user = $reserveList->user_id;
                                         <input id="memo" type="hidden" class="form-control @error('memo') is-invalid @enderror" name="memo" value="{{ $reserveList->memo}}" autocomplete="memo" autofocus>
                                         <div class="row mb-3 justify-content-center">
                                             <div class="col-md-6 justify-content-center">
-                                                <span id="ship_add-next" class="btn btn-success px-5">Next</span>
+                                                <span id="ship_add-next" class="btn btn-success px-5">{{ __('次へ') }}</span>
                                             </div>
                                         </div>
                                     </div>
                                     <div class="reserve2">
                                         <div class="row mb-3 driver_form">
-                                            <label class="col-md-2 col-form-label text-md-end">{{ __('driver') }}</label>
+                                            <label class="col-md-2 col-form-label text-md-end">{{ __('船頭') }}</label>
 
                                             <div class="col-md-10 driver-wrapper">
                                                 <ul class="d-flex flex-wrap driver-list">
@@ -132,11 +132,11 @@ $user = $reserveList->user_id;
                                         </div>
 
                                         <div class="row mb-3 pattern_form">
-                                            <label for="pattern" class="col-md-2 col-form-label text-md-end">{{ __('pattern') }}</label>
+                                            <label for="pattern" class="col-md-2 col-form-label text-md-end">{{ __('パターン') }}</label>
 
                                             <div class="col-md-10">
                                                 <select type="text" class="pattern form-control @error('pattern') is-invalid @enderror" name="pattern" value="{{ old('pattern') }}" autocomplete="pattern" autofocus>
-                                                    <option value="" selected hidden>choose</option>
+                                                    <option value="" selected hidden>{{ __('選択して下さい') }}</option>
                                                     @foreach ($all_patterns as $pattern)
                                                         <option value="{{$pattern->pattern}}">{{$pattern->pattern}}</option>
                                                     @endforeach
@@ -156,9 +156,9 @@ $user = $reserveList->user_id;
                                             <label class="col-md-2 col-form-label text-md-end"></label>
 
                                             <div class="col-md-10 d-flex">
-                                                <span id="reserve-previous" class="btn btn-success px-5">Back</span>
+                                                <span id="reserve-previous" class="btn btn-success px-5">{{ __('戻る') }}</span>
                                                 <span id="reserve-confirm" class="btn btn-primary mx-2">
-                                                    {{ __('Confirm') }}
+                                                    {{ __('確認') }}
                                                 </span>
                                             </div>
                                         </div>
@@ -168,41 +168,41 @@ $user = $reserveList->user_id;
                                             <div class="col-md-10 justify-content-center">
                                                 <table class="table">
                                                     <tr id="confirm-date">
-                                                        <th>date</th>
+                                                        <th>{{ __('日程') }}</th>
                                                         <td></td>
                                                     </tr>
                                                     <tr id="confirm-plan">
-                                                        <th>plan</th>
+                                                        <th>{{ __('プラン') }}</th>
                                                         <td></td>
                                                     </tr>
                                                     <tr id="confirm-boat_num">
-                                                        <th>boat_num</th>
+                                                        <th>{{ __('船数') }}</th>
                                                         <td></td>
                                                     </tr>
 
                                                     <tr id="confirm-place">
-                                                        <th>place</th>
+                                                        <th>{{ __('乗船場所') }}</th>
                                                         <td></td>
                                                     </tr>
                                                     <tr id="confirm-price">
-                                                        <th>price</th>
+                                                        <th>{{ __('価格') }}</th>
                                                         <td></td>
                                                     </tr>
                                                     <tr id="confirm-ships">
-                                                        <th>ships</th>
+                                                        <th>{{ __('船頭') }}</th>
                                                         <td></td>
                                                     </tr>
                                                     <tr id="confirm-memo">
-                                                        <th>memo</th>
+                                                        <th>{{ __('特記事項') }}</th>
                                                         <td></td>
                                                     </tr>
                                                 </table>
                                             </div>
 
                                             <div class="col-md-10 d-flex">
-                                                <span id="reserve-previous2" class="btn btn-success px-5">Back</span>
+                                                <span id="reserve-previous2" class="btn btn-success px-5">{{ __('戻る') }}</span>
                                                 <span id="pre-reserve" class="btn btn-primary mx-2">
-                                                    {{ __('Reserve') }}
+                                                    {{ __('予約') }}
                                                 </span>
 
                                             </div>
@@ -210,7 +210,7 @@ $user = $reserveList->user_id;
                                     </div>
                                     <div class="editShip">
                                         <div class="row mb-3 driver_form">
-                                            <label class="col-md-2 col-form-label text-md-end">{{ __('driver') }}</label>
+                                            <label class="col-md-2 col-form-label text-md-end">{{ __('船頭') }}</label>
 
                                             <div class="col-md-10 driver-wrapper">
                                                 <ul class="d-flex flex-wrap driver-list">
@@ -241,9 +241,9 @@ $user = $reserveList->user_id;
                                             <label class="col-md-2 col-form-label text-md-end"></label>
 
                                             <div class="col-md-10 d-flex">
-                                                <span id="editShip-previous" class="btn btn-success px-5">Back</span>
+                                                <span id="editShip-previous" class="btn btn-success px-5">{{ __('戻る') }}</span>
                                                 <span id="editShip-edit" class="btn btn-primary mx-2">
-                                                    {{ __('Edit') }}
+                                                    {{ __('編集') }}
                                                 </span>
                                             </div>
                                         </div>

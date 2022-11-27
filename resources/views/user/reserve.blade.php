@@ -7,20 +7,20 @@ $reserve_num = 0;
 @section('title','たきや漁予約システム | Reserves')
 @section('content')
     <div class="card">
-        <div class="card-header">{{ __('Reserves') }}</div>
+        <div class="card-header">{{ __('予約情報') }}</div>
             <div class="card-body">
                 <table class="table">
                     <tr>
-                        <th>Date</th>
-                        <th>Plan</th>
-                        <th>Boat num</th>
-                        <th>Pattern</th>
-                        <th>Driver</th>
-                        <th>Place</th>
-                        <th>Price</th>
-                        <th>Memo</th>
-                        <th>Created_at</th>
-                        <th colspan="3">Setting</th>
+                        <th>{{ __('日程') }}</th>
+                        <th>{{ __('プラン') }}</th>
+                        <th>{{ __('船数') }}</th>
+                        <th>{{ __('パターン') }}</th>
+                        <th>{{ __('船頭') }}</th>
+                        <th>{{ __('乗船場所') }}</th>
+                        <th>{{ __('価格') }}</th>
+                        <th>{{ __('特記事項') }}</th>
+                        <th>{{ __('予約登録日時') }}</th>
+                        <th colspan="3">{{ __('設定') }}</th>
                     </tr>
                     @forelse ( $user->reserveLists as $reserveList)
                         @php
@@ -48,16 +48,16 @@ $reserve_num = 0;
                         <td>{{$reserveList->memo}}</td>
                         <td>{{$reserveList->created_at}}</td>
                         <td>
-                            <a class="btn btn-primary px5" href="{{route('reserve.edit',$reserveList)}}">Edit</a>
+                            <a class="btn btn-primary px5" href="{{route('reserve.edit',$reserveList)}}">{{ __('編集') }}</a>
                         </td>
                         <td>
-                            <a class="btn btn-primary px5" href="{{route('reserve.shipEdit',$reserveList)}}">Ship Edit</a>
+                            <a class="btn btn-primary px5" href="{{route('reserve.shipEdit',$reserveList)}}">{{ __('船数編集') }}</a>
                         </td>
                         <td>
                             <form  action="{{route('reserve.destroy',$reserveList)}}" method="POST">
                                 @csrf
                                 @method('DELETE')
-                            <button type="submit" class="btn btn-danger px5">delete</button>
+                            <button type="submit" class="btn btn-danger px5">{{ __('削除') }}</button>
                             </form>
                         </td>
                     </tr>
@@ -66,10 +66,10 @@ $reserve_num = 0;
                         @endphp
                         @endif
                         @empty
-                        <tr>No reserves so far</tr>
+                        <tr>{{ __('予約はありません') }}</tr>
                     @endforelse
                     @if( $reserve_num == 0)
-                    <tr>No reserves so far</tr>
+                    <tr>{{ __('予約はありません') }}</tr>
                     @endif
                 </table>
                 {{-- {{  $user->reserves->links() }} --}}
@@ -78,20 +78,20 @@ $reserve_num = 0;
         </div>
     </div>
     <div class="card mt-5">
-        <div class="card-header">{{ __('Waitings') }}</div>
+        <div class="card-header">{{ __('キャンセル待ち') }}</div>
             <div class="card-body">
                 <table class="table">
                     <tr>
-                        <th>Date</th>
-                        <th>Plan</th>
-                        <th>Boat num</th>
-                        <th>Pattern</th>
-                        <th>Driver</th>
-                        <th>Place</th>
-                        <th>Price</th>
-                        <th>Memo</th>
-                        <th>Created_at</th>
-                        <th colspan="3">Setting</th>
+                        <th>{{ __('日程') }}</th>
+                        <th>{{ __('プラン') }}</th>
+                        <th>{{ __('船数') }}</th>
+                        <th>{{ __('パターン') }}</th>
+                        <th>{{ __('船頭') }}</th>
+                        <th>{{ __('乗船場所') }}</th>
+                        <th>{{ __('価格') }}</th>
+                        <th>{{ __('特記事項') }}</th>
+                        <th>{{ __('予約登録日時') }}</th>
+                        <th colspan="3">{{ __('設定') }}</th>
                     </tr>
                     @forelse ( $user->waitings as $waiting)
                         @php
@@ -119,16 +119,16 @@ $reserve_num = 0;
                         <td>{{$waiting->memo}}</td>
                         <td>{{$waiting->created_at}}</td>
                         <td>
-                            <a class="btn btn-primary px5" href="{{route('waiting.edit',$waiting)}}">edit</a>
+                            <a class="btn btn-primary px5" href="{{route('waiting.edit',$waiting)}}">{{ __('編集') }}</a>
                         </td>
                         <td>
-                            <a class="btn btn-primary px5" href="{{route('waiting.shipEdit',$waiting)}}">Ship Edit</a>
+                            <a class="btn btn-primary px5" href="{{route('waiting.shipEdit',$waiting)}}">{{ __('船数編集') }}</a>
                         </td>
                         <td>
                             <form  action="{{route('waiting.destroy',$waiting)}}" method="POST">
                                 @csrf
                                 @method('DELETE')
-                            <button type="submit" class="btn btn-danger px5">delete</button>
+                            <button type="submit" class="btn btn-danger px5">{{ __('削除') }}</button>
                             </form>
                         </td>
                     </tr>
@@ -137,10 +137,10 @@ $reserve_num = 0;
                         @endphp
                         @endif
                         @empty
-                        <tr>No reserves so far</tr>
+                        <tr>{{ __('予約はありません') }}</tr>
                     @endforelse
                     @if( $reserve_num == 0)
-                    <tr>No reserves so far</tr>
+                    <tr>{{ __('予約はありません') }}</tr>
                     @endif
                 </table>
                 {{-- {{  $user->reserves->links() }} --}}

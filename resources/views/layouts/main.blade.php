@@ -46,13 +46,13 @@
                 @guest
                     @if (Route::has('login'))
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
+                            <a class="nav-link" href="{{ route('login') }}">{{ __('ログイン') }}</a>
                         </li>
                     @endif
 
                     @if (Route::has('register'))
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
+                            <a class="nav-link" href="{{ route('register') }}">{{ __('会員登録') }}</a>
                         </li>
                     @endif
                 @else
@@ -65,7 +65,7 @@
                             <a class="dropdown-item" href="{{ route('logout') }}"
                                onclick="event.preventDefault();
                                              document.getElementById('logout-form').submit();">
-                                {{ __('Logout') }}
+                                {{ __('ログアウト') }}
                             </a>
 
                             <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
@@ -83,7 +83,7 @@
   <!-- Main Sidebar Container -->
   <aside class="main-sidebar sidebar-dark-primary elevation-4">
     <!-- Brand Logo -->
-    <a href="../index3.html" class="brand-link logo_wrapper">
+    <a href="{{ url('/') }}" class="brand-link logo_wrapper">
       <img src="{{asset('img/logo.png')}}" alt="たきや漁ロゴ" class="brand-image">
       {{-- <span class="brand-text font-weight-light">たきや漁予約システム</span> --}}
     </a>
@@ -123,7 +123,7 @@
             <a href="{{route('user.reserve',Auth::user()->id)}}" class="nav-link">
               <i class="nav-icon fas fa-tachometer-alt"></i>
               <p>
-                予約情報
+                {{ __('予約情報') }}
                 <i class="right fas fa-angle-left"></i>
               </p>
             </a>

@@ -18,7 +18,7 @@ $(function(){
             password == ""  )){
        $('.register-wrapper').addClass('animate');
             }else{
-                alert('complete form');
+                alert('フォームを記入してください');
             }
 
     });
@@ -141,8 +141,8 @@ $(function(){
                     </div></div>');
                     $('.reserve2 .pattern_form').clone().appendTo('.addship' + i);
                     $('.addship' + i).append('<div class="row mb-3"><div class="col-md-2"></div><div class="col-md-10 d-flex">\
-                    <span class="previous previous' + i +' btn btn-success px-5">Back</span>\
-                    <span class="next_ship next_ship' + i +' btn btn-primary px-5 mx-5">Next Ship</span>\
+                    <span class="previous previous' + i +' btn btn-success px-5">戻る</span>\
+                    <span class="next_ship next_ship' + i +' btn btn-primary px-5 mx-5">次の船へ</span>\
                     </div></div>');
                     $('.addship' + i).find('.pattern').attr('name', 'pattern'+ i);
                   }
@@ -162,7 +162,7 @@ $(function(){
                             $('.addship' + (i+1)).addClass('active');
 
                         } else{
-                            alert('complete form');
+                            alert('フォームを記入してください');
                         }
                         });
 
@@ -222,7 +222,7 @@ $(function(){
                             }
 
                             }else{
-                                alert('complete form');
+                                alert('フォームを記入して下さい');
                             }
 
                     });
@@ -238,8 +238,8 @@ $(function(){
                 $('.reserve2 .driver_form').clone().appendTo('.addship' + i);
                 $('.reserve2 .pattern_form').clone().appendTo('.addship' + i);
                 $('.addship' + i).append('<div class="row mb-3"><div class="col-md-2"></div><div class="col-md-10 d-flex">\
-                <span class="previous previous' + i +' btn btn-success px-5">Back</span>\
-                <span class="next_ship next_ship' + i +' btn btn-primary px-5 mx-5">Next Ship</span>\
+                <span class="previous previous' + i +' btn btn-success px-5">戻る</span>\
+                <span class="next_ship next_ship' + i +' btn btn-primary px-5 mx-5">次の船へ</span>\
                 </div></div>');
                 $('.addship' + i).find('.driver').attr('name', 'driver'+ i);
                 $('.addship' + i).find('.pattern').attr('name', 'pattern'+ i);
@@ -263,7 +263,7 @@ $(function(){
                         var nominated = $('.addship' + i + ' .driver:checked').val();
                         $('.addship').find('.driver[value="'+ nominated +'"]').prop('disabled', true).next().addClass('disabled').parents('.driver-list__item').addClass('disabled');
                     } else{
-                        alert('complete form');
+                        alert('フォームを記入してください');
                     }
                     });
 
@@ -328,7 +328,7 @@ $(function(){
                         }
 
                         }else{
-                            alert('complete form');
+                            alert('フォームを記入してください');
                         }
 
                 });
@@ -342,7 +342,7 @@ $(function(){
 
 
             }else{
-                alert('complete form');
+                alert('フォームを記入して下さい。');
             }
 
         });
@@ -522,7 +522,7 @@ $('#wait-reserve').on('click',function(){
               //通信が成功したとき
               .then((res) => {
 
-                alert('succeed');
+                alert('変更できました');
               })
               //通信が失敗したとき
               .fail((error) => {
@@ -667,7 +667,7 @@ $(function(){
                 }
                 }
                 else{
-                alert('false');
+                alert('失敗しました。');
                 }
               })
               //通信が失敗したとき
@@ -804,8 +804,8 @@ $(function(){
                     $('.reserve2 .driver_form').clone().appendTo('.addship' + i);
                     $('.reserve2 .pattern_form').clone().appendTo('.addship' + i);
                     $('.addship' + i).append('<div class="row mb-3"><div class="col-md-2"></div><div class="col-md-10 d-flex">\
-                    <span class="previous previous' + i +' btn btn-success px-5">Back</span>\
-                    <span class="next_ship next_ship' + i +' btn btn-primary px-5 mx-5">Next Ship</span>\
+                    <span class="previous previous' + i +' btn btn-success px-5">戻る</span>\
+                    <span class="next_ship next_ship' + i +' btn btn-primary px-5 mx-5">次の船へ</span>\
                     </div></div>');
                     $('.addship' + i).find('.driver').attr('name', 'driver'+ i);
                     $('.addship' + i).find('.pattern').attr('name', 'pattern'+ i);
@@ -829,7 +829,7 @@ $(function(){
                             var nominated = $('.addship' + i + ' .driver:checked').val();
                             $('.addship').find('.driver[value="'+ nominated +'"]').prop('disabled', true).next().addClass('disabled').parents('.driver-list__item').addClass('disabled');
                         } else{
-                            alert('complete form');
+                            alert('フォームを記入してください');
                         }
                         });
 
@@ -907,7 +907,7 @@ $(function(){
                             }
 
                             }else{
-                                alert('complete form');
+                                alert('フォームを記入してください');
                             }
 
                     });
@@ -921,7 +921,7 @@ $(function(){
 
 
                 }else{
-                    alert('complete form');
+                    alert('フォームを記入してください');
                 }
 
             });
@@ -958,7 +958,7 @@ $(function(){
             $('#boat_num').val(res);
             $('.each_ship').eq(i).remove();
             $('.ship-modal-close').trigger("click");
-            alert('deleted');
+            alert('削除しました。');
 
           })
           //通信が失敗したとき
@@ -1044,8 +1044,8 @@ $(function(){
                     </div></div>');
                     $('.reserve2 .pattern_form').clone().appendTo('.addship' + i);
                     $('.addship' + i).append('<div class="row mb-3"><div class="col-md-2"></div><div class="col-md-10 d-flex">\
-                    <span class="previous previous' + i +' btn btn-success px-5">Back</span>\
-                    <span class="next_ship next_ship' + i +' btn btn-primary px-5 mx-5">Next Ship</span>\
+                    <span class="previous previous' + i +' btn btn-success px-5">戻る</span>\
+                    <span class="next_ship next_ship' + i +' btn btn-primary px-5 mx-5">次の船へ</span>\
                     </div></div>');
                     $('.addship' + i).find('.pattern').attr('name', 'pattern'+ i);
                   }
@@ -1064,7 +1064,7 @@ $(function(){
                             $('.addship' + i).removeClass('active');
 
                         } else{
-                            alert('complete form');
+                            alert('フォームを記入してください');
                         }
                         });
 
@@ -1135,7 +1135,7 @@ $(function(){
                             }
 
                             }else{
-                                alert('complete form');
+                                alert('フォームを記入してください');
                             }
 
                     });
@@ -1149,7 +1149,7 @@ $(function(){
 
 
                 }else{
-                    alert('complete form');
+                    alert('フォームを記入してください');
                 }
 
             });
@@ -1196,11 +1196,11 @@ $('#wait_add_ship').on('click',function(){
         pre_num += res;
         if( i == (reserve_boat_num - 1)){
             if(pre_num == reserve_boat_num){
-                alert('Wait reserve succeed');
+                alert('キャンセル待ち予約完了');
 
                 $('#reserve').trigger("click");
             }else{
-                alert('Sorry reserve failed');
+                alert('予約できませんでした');
                 $('#reserve').attr('name', 'delete');
                 $('#reserve').trigger("click");
             }

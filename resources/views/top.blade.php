@@ -3,12 +3,12 @@
 @section('content')
 <div class="loading-wrapper active">
     <div class="loading-inner">
-        <p>Loadin...Please wait.</p>
-        <div class="loader">Loading...</div>
+        <p>ロードしています</p>
+        <div class="loader">ロードしています。</div>
         <img src="{{asset('img/undraw_fishing_hoxa.svg')}}" alt="">
     </div>
 </div>
-<h1>Click the day you want to reserve</h1>
+<h1>日程を選んでクリック</h1>
 <div id="calendar"></div>
 
 @endsection
@@ -34,7 +34,7 @@
                                 <div class="reserve-wrapper">
                                     <div class="reserve1 addship_0 active">
                                         <div class="row mb-3">
-                                            <label for="date" class="col-md-4 col-form-label text-md-end">{{ __('date') }}</label>
+                                            <label for="date" class="col-md-4 col-form-label text-md-end">{{ __('日程') }}</label>
 
                                             <div class="col-md-6">
                                                 <input id="date" type="date" class="form-control @error('date') is-invalid @enderror" name="date" value="{{ old('date') }}" required autocomplete="date" autofocus>
@@ -48,11 +48,11 @@
                                         </div>
 
                                         <div class="row mb-3">
-                                            <label for="plan" class="col-md-4 col-form-label text-md-end">{{ __('plan') }}</label>
+                                            <label for="plan" class="col-md-4 col-form-label text-md-end">{{ __('プラン') }}</label>
 
                                             <div class="col-md-6">
                                                 <select id="plan" type="text" class="form-control @error('plan') is-invalid @enderror" name="plan" value="{{ old('plan') }}" required autocomplete="plan" autofocus>
-                                                    <option value="" selected hidden>choose</option>
+                                                    <option value="" selected hidden>{{ __('選択してください') }}</option>
                                                     @foreach ($all_plans as $plan)
                                                         <option value="{{$plan->plan}}">{{$plan->plan}}</option>
                                                     @endforeach
@@ -66,7 +66,7 @@
                                             </div>
                                         </div>
                                         <div class="row mb-3">
-                                            <label for="boat_num" class="col-md-4 col-form-label text-md-end">{{ __('boat_num') }}</label>
+                                            <label for="boat_num" class="col-md-4 col-form-label text-md-end">{{ __('船数') }}</label>
 
                                             <div class="col-md-6">
                                                 <input id="boat_num" type="number" class="form-control @error('date') is-invalid @enderror" name="boat_num" value="{{ old('boat_num') }}" required autocomplete="boat_num" autofocus>
@@ -80,11 +80,11 @@
                                         </div>
 
                                         <div class="row mb-3">
-                                            <label for="place" class="col-md-4 col-form-label text-md-end">{{ __('place') }}</label>
+                                            <label for="place" class="col-md-4 col-form-label text-md-end">{{ __('乗船場所') }}</label>
 
                                             <div class="col-md-6">
                                                 <select id="place" type="text" class="form-control @error('place') is-invalid @enderror" name="place" value="{{ old('place') }}" required autocomplete="place" autofocus>
-                                                    <option value="" selected hidden>choose</option>
+                                                    <option value="" selected hidden>選択してください</option>
                                                     @foreach ($all_places as $place)
                                                         <option value="{{$place->place}}">{{$place->place}}</option>
                                                     @endforeach
@@ -100,11 +100,11 @@
                                             </div>
                                         </div>
                                         <div class="row mb-3">
-                                            <label for="price" class="col-md-4 col-form-label text-md-end">{{ __('price') }}</label>
+                                            <label for="price" class="col-md-4 col-form-label text-md-end">{{ __('価格') }}</label>
 
                                             <div class="col-md-6">
                                                 <select id="price" type="text" class="form-control @error('price') is-invalid @enderror" name="price" value="{{ old('price') }}" required autocomplete="price" autofocus>
-                                                    <option value="" selected hidden>choose</option>
+                                                    <option value="" selected hidden>{{ __('選択してください') }}</option>
                                                     @foreach ($all_prices as $price)
                                                         <option value="{{$price->price}}">{{$price->price}}</option>
                                                     @endforeach
@@ -120,7 +120,7 @@
                                             </div>
                                         </div>
                                         <div class="row mb-3">
-                                            <label for="memo" class="col-md-4 col-form-label text-md-end">{{ __('memo') }}</label>
+                                            <label for="memo" class="col-md-4 col-form-label text-md-end">{{ __('特記事項') }}</label>
 
                                             <div class="col-md-6">
                                                 <textarea id="memo" type="text" class="form-control @error('memo') is-invalid @enderror" name="memo" value="{{ old('memo') }}" autocomplete="memo" autofocus></textarea>
@@ -133,13 +133,13 @@
                                         </div>
                                         <div class="row mb-3 justify-content-center">
                                             <div class="col-md-6 justify-content-center">
-                                                <span id="reserve-next" class="btn btn-success px-5">Next</span>
+                                                <span id="reserve-next" class="btn btn-success px-5">{{ __('次へ') }}</span>
                                             </div>
                                         </div>
                                     </div>
                                     <div class="reserve2">
                                         <div class="row mb-3 driver_form">
-                                            <label class="col-md-2 col-form-label text-md-end">{{ __('driver') }}</label>
+                                            <label class="col-md-2 col-form-label text-md-end">{{ __('船頭') }}</label>
 
                                             <div class="col-md-10 driver-wrapper">
                                                 <ul class="d-flex flex-wrap driver-list">
@@ -166,11 +166,11 @@
                                             </div>
                                         </div>
                                         <div class="row mb-3 pattern_form">
-                                            <label for="pattern" class="col-md-2 col-form-label text-md-end">{{ __('pattern') }}</label>
+                                            <label for="pattern" class="col-md-2 col-form-label text-md-end">{{ __('パターン') }}</label>
 
                                             <div class="col-md-10">
                                                 <select type="text" class="pattern form-control @error('pattern') is-invalid @enderror" name="pattern" value="{{ old('pattern') }}" autocomplete="pattern" autofocus>
-                                                    <option value="" selected hidden>choose</option>
+                                                    <option value="" selected hidden>{{ __('選択してください') }}</option>
                                                     @foreach ($all_patterns as $pattern)
                                                         <option value="{{$pattern->pattern}}">{{$pattern->pattern}}</option>
                                                     @endforeach
@@ -201,9 +201,9 @@
                                             <label class="col-md-2 col-form-label text-md-end"></label>
 
                                             <div class="col-md-10 d-flex">
-                                                <span id="reserve-previous" class="btn btn-success px-5">Back</span>
+                                                <span id="reserve-previous" class="btn btn-success px-5">{{ __('戻る') }}</span>
                                                 <span id="reserve-confirm" class="btn btn-primary mx-2">
-                                                    {{ __('Confirm') }}
+                                                    {{ __('確認') }}
                                                 </span>
                                             </div>
                                         </div>
@@ -213,43 +213,43 @@
                                             <div class="col-md-10 justify-content-center">
                                                 <table class="table">
                                                     <tr id="confirm-date">
-                                                        <th>date</th>
+                                                        <th>{{ __('日程') }}</th>
                                                         <td></td>
                                                     </tr>
                                                     <tr id="confirm-plan">
-                                                        <th>plan</th>
+                                                        <th>{{ __('プラン') }}</th>
                                                         <td></td>
                                                     </tr>
                                                     <tr id="confirm-boat_num">
-                                                        <th>boat_num</th>
+                                                        <th>{{ __('船数') }}</th>
                                                         <td></td>
                                                     </tr>
 
                                                     <tr id="confirm-place">
-                                                        <th>place</th>
+                                                        <th>{{ __('乗船場所') }}</th>
                                                         <td></td>
                                                     </tr>
                                                     <tr id="confirm-price">
-                                                        <th>price</th>
+                                                        <th>{{ __('価格') }}</th>
                                                         <td></td>
                                                     </tr>
                                                     <tr id="confirm-ships">
-                                                        <th>ships</th>
+                                                        <th>{{ __('船頭') }}</th>
                                                         <td></td>
                                                     </tr>
                                                     <tr id="confirm-memo">
-                                                        <th>memo</th>
+                                                        <th>{{ __('特記事項') }}</th>
                                                         <td></td>
                                                     </tr>
                                                 </table>
                                             </div>
                                             <div class="col-md-10 d-flex">
-                                                <span id="reserve-previous2" class="btn btn-success px-5">Back</span>
+                                                <span id="reserve-previous2" class="btn btn-success px-5">{{ __('戻る') }}</span>
                                                 <span id="pre-reserve" class="btn btn-primary mx-2">
-                                                    {{ __('Reserve') }}
+                                                    {{ __('予約') }}
                                                 </span>
                                                 <span id="wait-reserve" class="btn btn-primary mx-2">
-                                                    {{ __('Wait Reserve') }}
+                                                    {{ __('キャンセル待ち予約') }}
                                                 </span>
                                             </div>
                                         </div>

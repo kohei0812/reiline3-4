@@ -4,61 +4,61 @@
 <div class="row justify-content-center">
     <div class="col-md-8">
         <div class="card">
-            <div class="card-header">{{ __('User Information') }}</div>
+            <div class="card-header">{{ __('会員情報') }}</div>
                 <div class="card-body">
                     <table class="table">
                         <tr>
-                            <th>Name</th>
+                            <th>{{ __('名前') }}</th>
                             <td>{{$user->name}}</td>
                         </tr>
                         <tr>
-                            <th>Furigana</th>
+                            <th>{{ __('フリガナ') }}</th>
                             <td>{{$user->furigana}}</td>
                         </tr>
                         <tr>
-                            <th>Email</th>
+                            <th>{{ __('メールアドレス') }}</th>
                             <td>{{$user->email}}</td>
                         </tr>
                         <tr>
-                            <th>Sex</th>
+                            <th>{{ __('性別') }}</th>
                             <td>
                                 @if($user->sex == 0)
-                                        {{"male"}}
+                                        {{"男性"}}
                                 @elseif($user->sex == 1)
-                                        {{"female"}}
+                                        {{"女性"}}
                                 @else
-                                    {{"not chosen"}}
+                                    {{"非選択"}}
                                 @endif
                             </td>
                         </tr>
                         <tr>
-                            <th>Old</th>
+                            <th>{{ __('年齢') }}</th>
                             <td>{{$user->old}}</td>
                         </tr>
                         <tr>
-                            <th>Code</th>
+                            <th>{{ __('郵便番号') }}</th>
                             <td>{{$user->code}}</td>
                         </tr>
                         <tr>
-                            <th>Adress</th>
+                            <th>{{ __('住所') }}</th>
                             <td>{{$user->address}}</td>
                         </tr>
                         <tr>
-                            <th>Tel</th>
+                            <th>{{ __('電話番号') }}</th>
                             <td>{{$user->tel}}</td>
                         </tr>
                         <tr>
-                            <th>Tel2</th>
+                            <th>{{ __('電話番号２') }}</th>
                             <td>{{$user->tel2}}</td>
                         </tr>
                         <tr>
-                            <th>Setting</th>
+                            <th>{{ __('設定') }}</th>
                             <td class="d-flex">
-                                <a class="btn btn-primary px5" href="{{route('user.edit',$user)}}">edit</a>
+                                <a class="btn btn-primary px5" href="{{route('user.edit',$user)}}">{{ __('編集') }}</a>
                                 <form  action="{{route('user.destroy',$user)}}" method="POST">
                                     @csrf
                                     @method('DELETE')
-                                <button type="submit" class="btn btn-danger px-5 mx-5">delete</button>
+                                <button type="submit" class="btn btn-danger px-5 mx-5">{{ __('削除') }}</button>
                                 </form>
                         </tr>
                     </table>

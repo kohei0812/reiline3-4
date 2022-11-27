@@ -2,20 +2,20 @@
 @section('title','たきや漁予約システム | Users')
 @section('content')
     <div class="card">
-        <div class="card-header">{{ __('Users') }}</div>
+        <div class="card-header">{{ __('会員情報') }}</div>
             <div class="card-body">
                 <table class="table">
                     <tr>
-                        <th>Name</th>
-                        <th>Furigana</th>
-                        <th>Email</th>
-                        <th>Sex</th>
-                        <th>Old</th>
-                        <th>code</th>
-                        <th>address</th>
-                        <th>tel</th>
-                        <th>tel2</th>
-                        <th colspan="2">Setting</th>
+                        <th>{{ __('名前') }}</th>
+                        <th>{{ __('フリガナ') }}</th>
+                        <th>{{ __('メールアドレス') }}</th>
+                        <th>{{ __('性別') }}</th>
+                        <th>{{ __('年齢') }}</th>
+                        <th>{{ __('郵便番号') }}</th>
+                        <th>{{ __('住所') }}</th>
+                        <th>{{ __('電話番号') }}</th>
+                        <th>{{ __('電話番号２') }}</th>
+                        <th colspan="2">{{ __('設定') }}</th>
                     </tr>
                     @forelse ( $all_users as $user)
                     <tr>
@@ -24,11 +24,11 @@
                         <td>{{$user->email}}</td>
                         <td>
                             @if($user->sex == 0)
-                                    {{"male"}}
+                            {{ __('男性') }}
                             @elseif($user->sex == 1)
-                                    {{"female"}}
+                            {{ __('女性') }}
                             @else
-                                {{"not chosen"}}
+                            {{ __('非選択') }}
                             @endif
                         </td>
                         <td>{{$user->old}}</td>
@@ -37,18 +37,18 @@
                         <td>{{$user->tel}}</td>
                         <td>{{$user->tel2}}</td>
                         <td>
-                            <a class="btn btn-primary px5" href="{{route('user.edit',$user)}}">edit</a>
+                            <a class="btn btn-primary px5" href="{{route('user.edit',$user)}}">{{ __('編集') }}</a>
                         </td>
                         <td>
                             <form  action="{{route('user.destroy',$user)}}" method="POST">
                                 @csrf
                                 @method('DELETE')
-                            <button type="submit" class="btn btn-danger px5">delete</button>
+                            <button type="submit" class="btn btn-danger px5">{{ __('削除') }}</button>
                             </form>
                         </td>
                     </tr>
                     @empty
-                    No users so far
+                    {{ __('会員はいません') }}
                     @endforelse
                 </table>
                 {{  $all_users->links() }}
